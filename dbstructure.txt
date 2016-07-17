@@ -1,0 +1,25 @@
+### DB Structure ideas ###
+- User
+    - id
+    - Name
+    - Unique ID
+    - Date of Birth
+    - Date added
+    - Place of Birth
+- User History
+    - Foreign key to User.id
+    - Last time seen
+    - Last known area
+- User Balance
+    - Foreign key to User.id
+    - Transaction Date
+    - Transaction Type
+    - Transaction Location (null if a donation?)
+    - Transaction Amount
+- Institution
+    - id
+    - Name
+    - Address
+    - Contact number
+    - Email address
+    - Type
