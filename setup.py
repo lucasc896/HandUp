@@ -14,5 +14,9 @@ setup(
     description="",
     url="https://github.com/lucasc896/HandUp",
     packages=find_packages(exclude=['tests', 'tests.*']),
-    entry_points={}
+    entry_points={
+        "console_scripts": [
+            "manage-db=handup.models.manage:main",
+        ]
+    }
 )

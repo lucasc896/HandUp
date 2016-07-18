@@ -9,7 +9,9 @@
 - User History
     - Foreign key to User.id
     - Last time seen
-    - Last known area
+    - Last seen area
+    - Last institution visited
+    - Last institution date
 - User Balance
     - Foreign key to User.id
     - Transaction Date
@@ -23,3 +25,8 @@
     - Contact number
     - Email address
     - Type
+- Institution Payment Details
+    - Foreign key 
+    - Account Number
+    - Sort Code
+    - Account Type
