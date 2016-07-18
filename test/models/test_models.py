@@ -5,7 +5,6 @@ from handup.models import factories, models
 
 def test_user(session):
     factories.UserFactory(name="Chris")
-    # factories.UserFactory(name="Will")
 
     session.commit()
 

@@ -22,7 +22,7 @@ def get_session(url):
 
 
 def get_db_url(config):
-    return config['database']['default']
+    return ""
 
 
 def get_test_session(url=HANDUP_TEST_POSTGRES_URL):
@@ -50,7 +50,7 @@ def drop_all(url=HANDUP_TEST_POSTGRES_URL):
     for table in reversed(md.sorted_tables):
         try:
             session.execute(table.delete())
-        except Exception:
+        except Exception as exc:
             pass
 
     session.commit()
@@ -66,7 +66,7 @@ def parse_arguments():
 
     parser.add_argument('-d', '--dburl',
                         help='SQLAlchemy URL',
-                        required=True)
+                        default=HANDUP_TEST_POSTGRES_URL)
 
     return parser.parse_args()
 
@@ -87,7 +87,7 @@ def main():
         _confirm("drop new tables")
         drop_all(args.dburl)
 
-    print("All good, enjoy!")
+    print("All good!")
 
 
 if __name__ == '__main__':

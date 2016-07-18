@@ -16,7 +16,7 @@ class UserFactory(SQLAlchemyModelFactory):
 
     id = factory.Sequence(int)
     name = factory.Sequence(str)
-    unique_user_id = factory.Sequence(lambda s: "id_{}".format(s))
+    uuid = factory.Sequence(lambda s: "uuid_{}".format(s))
     date_added = factory.Sequence(lambda _: datetime.utcnow())
     date_of_birth = factory.Sequence(lambda _: datetime.utcnow())
     place_of_birth = factory.Sequence(lambda s: "EastBourne {}".format(s))

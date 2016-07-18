@@ -11,6 +11,7 @@ class User(Base):
     __sequence_name__ = 'user_id_sequence'
 
     sequence = sa.Sequence(name=__sequence_name__)
+
     id = sa.Column(sa.Integer,
                    sequence,
                    primary_key=True)
@@ -20,10 +21,10 @@ class User(Base):
         nullable=False,
         doc="Name of the user")
 
-    unique_user_id = sa.Column(
+    uuid = sa.Column(
         sa.String(128),
         nullable=False,
-        doc="Unique identifier of user in network")
+        doc="Unique user identifier in network")
 
     date_added = sa.Column(
         sa.DateTime(),

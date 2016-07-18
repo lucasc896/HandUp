@@ -7,3 +7,5 @@ install: "pip install -r requirements-test.txt"
 before_script:
     - mysql -e 'create database test_handup_db;'
 script: "py.test test/ -v"
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
